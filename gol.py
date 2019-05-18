@@ -179,7 +179,7 @@ def caf():
 			#Any live cell with more than three live neighbours dies, as if by overpopulation.
 			if(live_neighbors > 3):
 				ca_new[step][i] = 0
-			#Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+			#Any dead cell with exactly three live neighbours becomes a live cell, as if by 			reproduction.
 			if((ca[step][i] == 0) and (live_neighbors == 3)):	
 				ca_new[step][i] = 1					 	
 
@@ -193,62 +193,60 @@ def caf():
 if __name__ == '__main__':
 	h = 100
 	w = h
-	
-	#ca = [[zeroorone() for x in range(w)]for y in range(h)]
 	ca = [[0 for x in range(w)]for y in range(h)]
-	ca[40][10] = 1
-	ca[40][11] = 1
-	ca[39][10] = 1
-	ca[39][11] = 1
 
-	ca[42][44] = 1
-	ca[42][45] = 1
-	ca[41][44] = 1
-	ca[41][45] = 1
-
-
-
-	ca[42][19] = 1
-	ca[41][19] = 1
-	ca[41][20] = 1
-	ca[40][20] = 1
-	ca[40][21] = 1
-	ca[39][20] = 1
-	ca[39][21] = 1
-	ca[39][22] = 1
-	ca[38][20] = 1
-	ca[38][21] = 1
-	ca[37][19] = 1
-	ca[37][20] = 1
-	ca[36][19] = 1
+	input = int(input("Enter 1 for random GoL, 2 for Glider example:"))
 	
-	ca[44][36] = 1
-	ca[43][36] = 1
-	ca[43][38] = 1
-	ca[42][37] = 1
-	ca[42][39] = 1
-	ca[41][37] = 1
-	ca[41][40] = 1
-	ca[40][37] = 1
-	ca[40][39] = 1
-	ca[39][36] = 1
-	ca[39][38] = 1
-	ca[38][36] = 1
-	
-	ca[47][19+2] = 1
-	ca[47][18+2] = 1
-	ca[48][18+2] = 1
-	ca[49][18+2] = 1
-	ca[49][16+2] = 1
-	ca[50][16+2] = 1
-	ca[50][17+2] = 1
-	
-	
-	
-	
+		
+	if(input == 1):
+		ca = [[zeroorone() for x in range(w)]for y in range(h)]
+		print("hi")
+	elif(input == 2):		
+		ca[40][10] = 1
+		ca[40][11] = 1
+		ca[39][10] = 1
+		ca[39][11] = 1
 
+		ca[42][44] = 1
+		ca[42][45] = 1
+		ca[41][44] = 1
+		ca[41][45] = 1
 
-
+		ca[42][19] = 1
+		ca[41][19] = 1
+		ca[41][20] = 1
+		ca[40][20] = 1
+		ca[40][21] = 1
+		ca[39][20] = 1
+		ca[39][21] = 1
+		ca[39][22] = 1
+		ca[38][20] = 1
+		ca[38][21] = 1
+		ca[37][19] = 1
+		ca[37][20] = 1
+		ca[36][19] = 1
+	
+		ca[44][36] = 1
+		ca[43][36] = 1
+		ca[43][38] = 1
+		ca[42][37] = 1
+		ca[42][39] = 1
+		ca[41][37] = 1
+		ca[41][40] = 1
+		ca[40][37] = 1
+		ca[40][39] = 1
+		ca[39][36] = 1
+		ca[39][38] = 1
+		ca[38][36] = 1
+	
+		ca[47][19+2] = 1
+		ca[47][18+2] = 1
+		ca[48][18+2] = 1
+		ca[49][18+2] = 1
+		ca[49][16+2] = 1
+		ca[50][16+2] = 1
+		ca[50][17+2] = 1
+		print("hi2")
 
 
 
@@ -256,8 +254,6 @@ if __name__ == '__main__':
 	fig, axes = plt.subplots()
 	
 	ln, = plt.plot([], [], 'bs', markersize = 2)
-
-
 
 	ani = FuncAnimation(fig, update, frames=1000, init_func=init, blit=True, repeat=False)
 	plt.show()
